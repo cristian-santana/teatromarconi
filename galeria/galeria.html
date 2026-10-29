@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Galería de arte de la Sociedad Italiana de Gálvez: pintura, fotografía y muestras." />
+  <title>Galería | Sociedad Italiana de Gálvez</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="galeria.css" />
+  <link rel="icon" href="images/logo1.webp" type="image/webp" />
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER SIMPLE DE MÓDULO (con retorno al sitio principal)
+       ============================================================ -->
+  <header class="module-header" role="banner">
+     <nav class="navbar" aria-label="Navegación principal">
+      <a href="../index.html" class="navbar__brand" aria-label="Ir al inicio">
+        <img src="images/logo1.webp" alt="Logo Sociedad Italiana de Socorros Mutuos de Gálvez" class="navbar__logo" width="48" height="48" />
+        <span class="navbar__name">
+          <strong>Sociedad Italiana</strong>
+          <em>de Socorros Mutuos · Gálvez</em>
+        </span>
+      </a>
+
+      <!-- Botón hamburguesa (móvil) -->
+      <button class="navbar__toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuPrincipal">
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+
+      <!-- Menú principal -->
+      <ul class="navbar__menu" id="menuPrincipal">
+       
+        <li><a href="../#colaborar" class="btn btn--accent navbar__cta">Hacete Socio / Doná</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="galeria" aria-labelledby="galeria-title">
+    <header class="section__header">
+      <h2 class="section__title" id="galeria-title">Exposición de Arte</h2>
+      <p class="section__subtitle">
+        En esta seccion se precentaran Obras de artistas locales y de la región. PROXIMAMENTE....
+      </p>
+    </header>
+
+    <!-- ============================================================
+         GRILLA RESPONSIVE DE OBRAS
+         Se completa dinámicamente desde galeria.js
+         ============================================================ -->
+    <section
+      class="galeria__grid"
+      id="galeriaGrid"
+      aria-label="Grilla de obras de arte"
+      aria-live="polite"
+    ></section>
+
+    <p class="galeria__empty" id="galeriaEmpty" hidden>
+      No hay obras para mostrar por el momento.
+    </p>
+  </main>
+
+  <!-- ============================================================
+       LIGHTBOX / MODAL ACCESIBLE
+       ============================================================ -->
+  <div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="lightboxTitle"
+    aria-describedby="lightboxArtist"
+    hidden
+  >
+    <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar visor">×</button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+      <figcaption class="lightbox__caption">
+        <h3 class="lightbox__title" id="lightboxTitle"></h3>
+        <p class="lightbox__artist" id="lightboxArtist"></p>
+        <p class="lightbox__desc" id="lightboxDesc"></p>
+      </figcaption>
+    </figure>
+  </div>
+
+  <script src="galeria.js"></script>
+</body>
+</html>

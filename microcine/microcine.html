@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Micro Cine de la Sociedad Italiana de Gálvez: cartelera de películas, funciones y trailers." />
+  <title>Micro Cine | Sociedad Italiana de Gálvez</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="microcine.css" />
+  <link rel="icon" href="image/logo1.webp" type="image/webp" />
+</head>
+<body class="microcine-body">
+
+  <header class="module-header module-header--dark" role="banner">
+   <nav class="navbar" aria-label="Navegación principal">
+      <a href="../index.html" class="navbar__brand" aria-label="Ir al inicio">
+        <img src="image/logo1.webp" alt="Logo Sociedad Italiana de Socorros Mutuos de Gálvez" class="navbar__logo" width="48" height="48" />
+        <span class="navbar__name">
+          <strong>Sociedad Italiana</strong>
+          <em>de Socorros Mutuos · Gálvez</em>
+        </span>
+      </a>
+
+      <!-- Botón hamburguesa (móvil) -->
+      <button class="navbar__toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuPrincipal">
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+
+      <!-- Menú principal -->
+      <ul class="navbar__menu" id="menuPrincipal">
+        <li><a href="../#colaborar" class="btn btn--accent navbar__cta">Hacete Socio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ 
+
+    <!-- ============================================================
+         CARRUSEL DE PELÍCULAS DESTACADAS
+         ============================================================ -->
+    <section class="carrusel" aria-label="Películas destacadas" aria-roledescription="carrusel">
+        <h2 class="section__title" id="microcine-title">Cartelera de Películas</h2>
+      <p class="section__subtitle">
+        Funciones especiales, cine de autor y clásicos restaurados en nuestro microcine.
+      </p>
+      <div class="carrusel__viewport">
+        <ul class="carrusel__track" id="carruselTrack"></ul>
+      </div>
+      <div class="carrusel__controls">
+        <button type="button" class="carrusel__btn" id="carruselPrev" aria-label="Película anterior">‹</button>
+        <div class="carrusel__dots" id="carruselDots" role="tablist" aria-label="Seleccionar película destacada"></div>
+        <button type="button" class="carrusel__btn" id="carruselNext" aria-label="Película siguiente">›</button>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         GRILLA DE PELÍCULAS EN CARTELERA
+         ============================================================ -->
+    <section
+      class="microcine__grid"
+      id="microcineGrid"
+      aria-label="Películas en cartelera"
+    ></section>
+  </main>
+
+  <!-- ============================================================
+       MODAL DE TRAILER (VIDEO EMBEBIDO)
+       ============================================================ -->
+  <div
+    class="trailer-modal"
+    id="trailerModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="trailerModalTitle"
+    hidden
+  >
+    <div class="trailer-modal__backdrop" data-close-trailer></div>
+    <div class="trailer-modal__card">
+      <button class="trailer-modal__close" id="trailerModalClose" aria-label="Cerrar trailer">×</button>
+      <h3 class="trailer-modal__title" id="trailerModalTitle"></h3>
+      <div class="trailer-modal__video">
+        <iframe
+          id="trailerFrame"
+          title="Trailer de la película"
+          src=""
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="microcine.js"></script>
+</body>
+</html>

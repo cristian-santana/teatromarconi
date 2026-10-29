@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cartelera de eventos, obras de teatro y muestras de la Sociedad Italiana de Gálvez." />
+  <title>Cartelera | Sociedad Italiana de Gálvez</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="./cartelera.css" />
+  <link rel="icon" href="../images/logo1.webp" type="image/webp" />
+</head>
+<body>
+
+  <header class="module-header" role="banner">
+   <nav class="navbar" aria-label="Navegación principal">
+      <a href="../../index.html" class="navbar__brand" aria-label="Ir al inicio">
+        <img src="../galeria/images/logo1.webp" alt="Logo Sociedad Italiana de Socorros Mutuos de Gálvez" class="navbar__logo" width="48" height="48" />
+        <span class="navbar__name">
+          <strong>Sociedad Italiana</strong>
+          <em>de Socorros Mutuos · Gálvez</em>
+        </span>
+      </a>
+
+      <!-- Botón hamburguesa (móvil) -->
+      <button class="navbar__toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuPrincipal">
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+
+      <!-- Menú principal -->
+      <ul class="navbar__menu" id="menuPrincipal">
+        
+        <li><a href="../#colaborar" class="btn btn--accent navbar__cta">Hacete Socio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="cartelera" aria-labelledby="cartelera-title">
+     <h1 class="module-header__title">Cartelera</h1>
+    <header class="section__header">
+      <h2 class="section__title" id="cartelera-title">Próximos Eventos</h2>
+      <p class="section__subtitle">
+        Obras de teatro, conciertos, exposiciones y actividades culturales.
+      </p>
+    </header>
+
+    <!-- ============================================================
+         CONTROLES DE FILTRADO Y BÚSQUEDA
+         ============================================================ -->
+    <form class="cartelera__filtros" id="filtrosForm" role="search" aria-label="Filtrar eventos">
+      <label class="filtro">
+        <span class="filtro__label">Buscar</span>
+        <input
+          type="search"
+          id="busqueda"
+          name="busqueda"
+          placeholder="Título, lugar o palabra clave…"
+          aria-label="Buscar eventos por texto"
+        />
+      </label>
+
+      <label class="filtro">
+        <span class="filtro__label">Categoría</span>
+        <select id="categoria" name="categoria" aria-label="Filtrar por categoría">
+          <option value="">Todas</option>
+          <option value="Teatro">Teatro</option>
+          <option value="Concierto">Concierto</option>
+          <option value="Exposición">Exposición</option>
+        </select>
+      </label>
+
+      <label class="filtro">
+        <span class="filtro__label">Desde</span>
+        <input type="date" id="fechaDesde" name="fechaDesde" aria-label="Fecha desde" />
+      </label>
+
+      <label class="filtro">
+        <span class="filtro__label">Hasta</span>
+        <input type="date" id="fechaHasta" name="fechaHasta" aria-label="Fecha hasta" />
+      </label>
+
+      <button type="reset" class="btn btn--primary filtro__reset" id="resetFiltros">
+        Limpiar filtros
+      </button>
+    </form>
+
+    <!-- Estado de resultados -->
+    <p class="cartelera__status" id="carteleraStatus" role="status" aria-live="polite"></p>
+
+    <!-- Grilla de eventos -->
+    <section
+      class="cartelera__grid"
+      id="carteleraGrid"
+      aria-label="Listado de eventos"
+    ></section>
+
+    <p class="cartelera__empty" id="carteleraEmpty" hidden>
+      No se encontraron eventos con esos criterios.
+    </p>
+  </main>
+
+  <!-- ============================================================
+       MODAL DE DETALLE DE EVENTO
+       ============================================================ -->
+  <div
+    class="evento-modal"
+    id="eventoModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="eventoModalTitle"
+    hidden
+  >
+    <div class="evento-modal__backdrop" data-close-modal></div>
+    <article class="evento-modal__card">
+      <button class="evento-modal__close" id="eventoModalClose" aria-label="Cerrar detalle">×</button>
+      <span class="evento-modal__cat" id="eventoModalCat"></span>
+      <h3 class="evento-modal__title" id="eventoModalTitle"></h3>
+      <p class="evento-modal__meta" id="eventoModalMeta"></p>
+      <p class="evento-modal__desc" id="eventoModalDesc"></p>
+      <a class="btn btn--accent evento-modal__cta" id="eventoModalCta" href="#colaborar">
+        Reservar / Consultar
+      </a>
+    </article>
+  </div>
+
+  <script src="./cartelera.js"></script>
+  <!-- Visor 360° del Teatro Marconi (se muestra al final de la cartelera) -->
+  <script src="./recorrido360.js" defer></script>
+</body>
+</html>

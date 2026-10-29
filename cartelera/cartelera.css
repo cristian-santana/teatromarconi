@@ -1,0 +1,377 @@
+/* ============================================================
+   MÓDULO CARTELERA — estilos autocontenidos
+   ============================================================ */
+:root {
+  --color-primary: #008C45;
+  --color-primary-dark: #006B34;
+  --color-secondary: #f4ebeb;
+  --color-accent: #CD212A;
+  --color-accent-warm: #B08D57;
+  --color-bg-light: #F4F5F0;
+  --color-bg-dark: #0F1410;
+  --color-text: #e6eaef;
+  --color-text-muted: #dfe4ec;
+  --color-border: #E5E7EB;
+
+  /* Espaciados */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+
+  /* Tipografías */
+  --font-heading: 'Georgia', 'Times New Roman', serif;
+  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Radios y sombras */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 2px 6px rgba(0,0,0,.06);
+  --shadow-md: 0 8px 24px rgba(0,0,0,.10);
+  --shadow-lg: 0 16px 40px rgba(234, 226, 226, 0.18);
+
+  --header-h: 72px;
+}
+
+body{
+  background: #0F1410;
+}
+
+/* ============================================================
+   BOTONES
+   ============================================================ */
+.btn {
+  display: inline-block;
+  padding: .85rem 1.5rem;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: .95rem;
+  letter-spacing: .3px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all .3s ease;
+  text-align: center;
+}
+.btn--primary { background: var(--color-primary); color: #fff; }
+.btn--primary:hover { background: var(--color-primary-dark); color: #fff; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn--accent { background: var(--color-accent); color: #fff; }
+.btn--accent:hover { background: #a91a22; color: #fff; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+/* ============================================================
+   HEADER + NAV
+   ============================================================ */
+
+
+
+.navbar__brand { display: flex;margin-right: 700px ; align-items: center; gap: .75rem; color: var(--color-bg-dark); }
+.navbar__logo { width: 48px; height: 48px; object-fit: contain; }
+.navbar__name { display: flex; flex-direction: column; line-height: 1.1; }
+.navbar__name strong { font-size: .95rem; }
+.navbar__name em { font-style: normal; font-size: .72rem; color: var(--color-bg-dark); }
+
+
+
+
+@media (min-width: 1024px) {
+  .navbar__toggle { display: none; }
+  .navbar__menu { display: flex !important; flex-direction: row; width: auto; align-items: center; gap: .25rem; padding: 0; }
+  .navbar__cta { margin-top: 0; margin-left: var(--space-sm); }
+}
+
+.main-nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-md);
+  padding: 1.5rem;
+  border-bottom: 3px solid var(--color-accent-warm);
+}
+
+.main-nav.is-open {
+  display: block;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nav-link {
+  font-weight: 600;
+  color: var(--color-secondary);
+  font-size: 1.05rem;
+  padding: 0.50rem 0;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+.nav-cta-mobile {
+  display: block;
+  color: var(--color-accent);
+}
+
+.header-actions {
+  display: none;
+}
+
+/* Hamburger Toggle Button */
+.nav-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 21px;
+  padding: 0;
+}
+
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  padding: var(--space-xl) var(--space-sm);
+}
+.hero__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.hero__overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(15,20,16,.55) 0%, rgba(15,20,16,.85) 100%);
+}
+.hero__content { position: relative; z-index: 2; max-width: 820px; }
+.hero__badge {
+  display: inline-block;
+  padding: .4rem 1rem;
+  border-radius: 999px;
+  background: rgba(176,141,87,.25);
+  border: 1px solid var(--color-accent-warm);
+  color: #f4e9d6;
+  font-size: .8rem;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+.hero__title { font-size: clamp(1.9rem, 5vw, 3.2rem); color: #fff; margin-bottom: var(--space-sm); }
+.hero__text { font-size: 1.05rem; color: #e5e7eb; max-width: 640px; margin: 0 auto var(--space-md); }
+.hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); justify-content: center; }
+
+
+
+/* Encabezado de módulo */
+.module-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(244, 245, 240, .9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+  padding: .75rem var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+.module-header__back {
+  font-weight: 600;
+  font-size: .9rem;
+  color: var(--color-primary-dark);
+}
+.module-header__title {
+  font-size: 1.05rem;
+  margin: 0;
+}
+.module-header .tricolor-bar {
+  position: absolute;
+  bottom: -4px; left: 0; right: 0;
+}
+
+
+
+
+/* ============================================================
+   MÓDULO CARTELERA — estilos autocontenidos
+   ============================================================ */
+
+.cartelera {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-sm);
+}
+
+/* Filtros */
+.cartelera__filtros {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+  
+  background: hsla(0, 5%, 71%, 0.95);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .cartelera__filtros { grid-template-columns: 2fr 1fr 1fr 1fr auto; align-items: end;  }
+}
+.filtro { display: flex; flex-direction: column; gap: .3rem; }
+.filtro__label { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--color-bg-dark); }
+.filtro input,
+.filtro select {
+  font-family: inherit;
+  font-size: .92rem;
+  padding: .65rem .8rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-light);
+  color: var(--color-bg-dark);
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+.filtro input:focus,
+.filtro select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0,140,69,.15);
+  background: #d4cece;
+}
+.filtro__reset { align-self: stretch; }
+
+.cartelera__status {
+  font-size: .85rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+/* Grilla de eventos */
+.cartelera__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+.cartelera__empty {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: var(--space-lg);
+}
+
+/* Tarjeta de evento */
+.evento {
+  background: hsla(0, 2%, 22%, 0.95);;
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.evento:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-top-color: var(--color-primary);
+}
+.evento__cat {
+  align-self: flex-start;
+  padding: .25rem .7rem;
+  border-radius: 999px;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  background: rgba(0,140,69,.12);
+  color: var(--color-primary-dark);
+}
+.evento__cat[data-cat="Concierto"] { background: rgba(205,33,42,.12); color: var(--color-accent); }
+.evento__cat[data-cat="Exposición"] { background: rgba(176,141,87,.18); color: #f8f8f8; }
+
+.evento__title { font-size: 1.15rem; margin: 0; }
+.evento__meta {
+  font-size: .82rem;
+  color: var(--color-text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+  margin: 0;
+}
+.evento__desc { font-size: .92rem; color: var(--color-text-muted); flex-grow: 1; margin: 0; }
+.evento__actions { display: flex; gap: .5rem; margin-top: .5rem; }
+.evento__actions .btn { padding: .6rem 1rem; font-size: .85rem; }
+
+/* Modal de evento */
+.evento-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+}
+.evento-modal[hidden] { display: none; }
+.evento-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 10, 8, .85);
+  animation: fadeIn .25s ease;
+}
+.evento-modal__card {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  max-width: 520px;
+  width: 100%;
+  box-shadow: var(--shadow-lg);
+  animation: zoomIn .3s ease;
+}
+.evento-modal__close {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--color-secondary);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: background .3s ease;
+}
+.evento-modal__close:hover { background: var(--color-bg-light); }
+.evento-modal__cat {
+  display: inline-block;
+  padding: .25rem .7rem;
+  border-radius: 999px;
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: rgba(0,140,69,.12);
+  color: var(--color-primary-dark);
+  margin-bottom: .5rem;
+}
+.evento-modal__title { font-size: 1.4rem; margin-bottom: .5rem; }
+.evento-modal__meta { font-size: .88rem; color: var(--color-text-muted); margin-bottom: var(--space-sm); }
+.evento-modal__desc { color: var(--color-text); margin-bottom: var(--space-md); }
+
+@media (prefers-reduced-motion: reduce) {
+  .evento, .evento-modal__backdrop, .evento-modal__card { transition: none; animation: none; }
+}

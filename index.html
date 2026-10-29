@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sitio oficial de la Sociedad Italiana de Socorros Mutuos de Gálvez. Recuperación integral del Cine-Teatro Marconi: Galería, Microcine y Teatro." />
+  <meta name="author" content="Estudiantes Tecnicatura Superior en Análisis Funcional de Sistemas" />
+  <title>Sociedad Italiana de Socorros Mutuos de Gálvez | Cine-Teatro Marconi</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="./images/logo1.webp" type="image/webp" />
+
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER + NAVEGACIÓN
+       ============================================================ -->
+  <header class="site-header" id="top">
+    <nav class="navbar" aria-label="Navegación principal">
+      <!-- El logo funciona como enlace a Inicio -->
+      <a href="#inicio" class="navbar__brand" aria-label="Sociedad Italiana de Socorros Mutuos de Gálvez: ir al inicio">
+        <img src="./images/logo1.webp" alt="" class="navbar__logo" width="48" height="48" />
+        <span class="navbar__name">
+          <strong>Sociedad Italiana</strong>
+          <em>de Socorros Mutuos · Gálvez</em>
+        </span>
+      </a>
+
+      <button class="navbar__toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuPrincipal">
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+
+      <ul class="navbar__menu" id="menuPrincipal">
+        <li class="navbar__item--dropdown">
+          <button type="button" class="navbar__link navbar__dropdown-btn" id="btnNosotros" aria-expanded="false" aria-haspopup="true" aria-controls="submenuNosotros">Nosotros</button>
+          <ul class="navbar__submenu" id="submenuNosotros" aria-labelledby="btnNosotros" hidden>
+            <li><a href="#historia">Historia del Teatro</a></li>
+            <li><a href="#espacios">Nuestros espacios</a></li>
+            <li><a href="./galeria/galeria.html">La Galería</a></li>
+            <li><a href="./microcine/microcine.html">El Microcine</a></li>
+            <li><a href="./cartelera/cartelera.html">Teatro Marconi</a></li>
+          </ul>
+        </li>
+        <li><a href="#obras" class="navbar__link">Puesta en Valor</a></li>
+        <li><a href="#novedades" class="navbar__link">Novedades de Italia</a></li>
+        <li><a href="#mapa-italia" class="navbar__link">Mapa de Italia</a></li>
+        <li><a href="#experiencias" class="navbar__link">Tu experiencia</a></li>
+        <li><a href="#colaborar" class="btn btn--accent navbar__cta">Asociate / Doná</a></li>
+      </ul>
+    </nav>
+    <span class="tricolor-bar" aria-hidden="true"></span>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO / INICIO
+         ============================================================ -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <img src="./images/sociedad.jpeg" alt="Fachada del Teatro Marconi en proceso de restauración" class="hero__bg" />
+      <span class="hero__overlay" aria-hidden="true"></span>
+
+      <div class="hero__content">
+        <p class="hero__badge">Plan de Recuperación Integral en Marcha</p>
+        <h1 class="hero__title" id="hero-title">
+          Recuperando el valor cultural de la Sociedad Italiana de Gálvez
+        </h1>
+        <p class="hero__text">
+          Después de años de abandono, la nueva Comisión Directiva trabaja para reabrir
+          <strong>La Galería</strong> y el <strong>Microcine</strong>, y para poner en valor
+          el histórico <strong>Teatro Marconi</strong>. Un patrimonio de todos los galvenses
+          que vuelve a latir.
+        </p>
+        <div class="hero__actions">
+          <a href="#obras" class="btn btn--primary">Ver Avance de Renovaciones</a>
+          <a href="#colaborar" class="btn btn--accent">Colaborar </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         NOSOTROS (Historia + Recorrido + Espacios)
+         ============================================================ -->
+    <section class="section" id="nosotros" aria-labelledby="nosotros-title">
+      <header class="section__header">
+        <h2 class="section__title" id="nosotros-title">Nosotros</h2>
+        <p class="section__subtitle">
+          Nuestra historia, el edificio que habitamos y los espacios que vuelven a abrirse.
+        </p>
+      </header>
+
+      <!-- Historia -->
+      <div class="subsection" id="historia" aria-labelledby="historia-title">
+        <h3 class="subsection__title" id="historia-title">Historia del Teatro y de la Sociedad</h3>
+
+        <div class="grid grid--historia">
+          <article class="historia__text">
+            <p>
+              A fines del siglo XIX y principios del XX, familias italianas llegaron a Gálvez
+              con sueños de progreso y comunidad. Fundaron sociedades de socorros mutuos
+              que fueron mucho más que ayuda económica: fueron espacios de identidad,
+              cultura y contención.
+            </p>
+            <p>
+              La <strong>Sociedad Italiana de Socorros Mutuos "Italia Unida"</strong> construyó
+              el <strong>Teatro Marconi</strong>, un complejo que durante décadas fue
+              epicentro de la vida cultural galvense. Hoy, después de un largo período de
+              abandono, una nueva Comisión Directiva trabaja para devolverle su esplendor.
+            </p>
+          </article>
+
+          <aside class="historia__timeline" aria-label="Línea de tiempo institucional">
+            <h4 class="historia__subtitle">Hitos principales</h4>
+            <ol class="timeline">
+              <li class="timeline__item"><span class="timeline__year">Fines s. XIX</span><p>Llegada de las primeras familias italianas a Gálvez.</p></li>
+              <li class="timeline__item"><span class="timeline__year">Principios s. XX</span><p>Fundación de la Sociedad Italiana de Socorros Mutuos.</p></li>
+              <li class="timeline__item"><span class="timeline__year">Décadas de esplendor</span><p>El Teatro Marconi se consolida como centro cultural de Gálvez.</p></li>
+              <li class="timeline__item"><span class="timeline__year">Años de abandono</span><p>Prolongada inactividad y deterioro edilicio del complejo.</p></li>
+              <li class="timeline__item"><span class="timeline__year">2026</span><p>Nueva Comisión Directiva inicia el Plan de Recuperación Integral.</p></li>
+            </ol>
+          </aside>
+        </div>
+        
+        <h3 class="subsection__title">Nuestros Pilares Fundamentales</h3>
+
+        <div class="grid grid--ejes">
+          <article class="eje"><h4 class="eje__title">Cultura e Italianidad</h4><p class="eje__text">Preservar las raíces, el idioma, las tradiciones y el arte de la colectividad italiana.</p></article>
+          <article class="eje"><h4 class="eje__title">Comunidad e Integración</h4><p class="eje__text">Un espacio abierto a toda la comunidad de Gálvez, sin distinciones.</p></article>
+          <article class="eje"><h4 class="eje__title">Desarrollo Sustentable</h4><p class="eje__text">Recuperar el patrimonio con criterios de eficiencia, cuidado ambiental y perdurabilidad.</p></article>
+        </div>
+      </div>
+
+      <!-- Espacios -->
+      <div class="subsection" id="espacios" aria-labelledby="espacios-title">
+        <h3 class="subsection__title" id="espacios-title">Un Recorrido por el Edificio</h3>
+        <p class="section__subtitle">Tres espacios pensados para encontrarnos, disfrutar y sostener nuestra identidad.</p>
+
+        <div class="grid grid--cards">
+
+          <article class="card card--space" aria-labelledby="card-galeria">
+            <span class="badge badge--priority">Apertura Prioritaria</span>
+            <a href="./galeria/galeria.html"  aria-label="Abrir la página de La Galería (se abre en una pestaña nueva)">
+              <img src="./images/frente.webp" alt="Sala de exposiciones de La Galería" class="card__img" loading="lazy" />
+            </a>
+            <h4 class="card__title" id="card-galeria">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h18v18H3z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 15l5-5 4 4 3-3 6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              La Galería
+            </h4>
+            <p class="card__text">Un espacio íntimo para exposiciones de artes visuales, muestras fotográficas y obras de artistas locales y de la región.</p>
+            <footer class="card__footer"><span class="status status--progress">En restauración</span></footer>
+          </article>
+
+          <article class="card card--space" aria-labelledby="card-microcine">
+            <span class="badge badge--priority">Apertura Prioritaria</span>
+            <a href="./microcine/microcine.html" aria-label="Abrir la página del Microcine">
+              <img src="./images/micro.webp" alt="Interior del Microcine adaptado" class="card__img" loading="lazy" />
+            </a>
+            <h4 class="card__title" id="card-microcine">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 22h8M12 18v4" stroke="currentColor" stroke-width="2"/></svg>
+              El Microcine
+            </h4>
+            <p class="card__text">Espectáculos íntimos, ciclos de cine, charlas y presentaciones culturales en un ámbito cálido y cuidado.</p>
+            <footer class="card__footer"><span class="status status--progress">En restauración</span></footer>
+          </article>
+
+          <article class="card card--space" aria-labelledby="card-teatro">
+            <span class="badge badge--integral">Etapa Integral</span>
+            <a href="./cartelera/cartelera.html" aria-label="Abrir la página de la Cartelera">
+             <img src="./images/teatro.webp" alt="Sala principal del Teatro Marconi" class="card__img" loading="lazy" />
+            </a>
+            <h4 class="card__title" id="card-teatro">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20V8l9-5 9 5v12" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 20v-6h6v6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              Teatro Marconi
+            </h4>
+            <p class="card__text">Patrimonio arquitectónico de Gálvez. La sala principal será restaurada de forma integral para recuperar su esplendor original.</p>
+            <footer class="card__footer"><span class="status status--planning">Planificación integral</span></footer>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PLAN DE OBRAS
+         ============================================================ -->
+         <section class="section section--dark" id="obras" aria-labelledby="obras-title">
+  <header class="section__header">
+    <h2 class="section__title" id="obras-title">¿En qué estamos trabajando?</h2>
+    <p class="section__subtitle">Cada obra es un paso concreto hacia la reapertura del complejo cultural.</p>
+  </header>
+
+  <div class="grid grid--obras">
+    <article class="card card--obra">
+      <span class="card__icon" aria-hidden="true">
+        <!-- Techo / casa -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 11.5 12 4l9 7.5"/>
+          <path d="M5 10v10h14V10"/>
+          <path d="M9 20v-6h6v6"/>
+        </svg>
+      </span>
+      <h3 class="card__title">Renovación de Techos</h3>
+      <p class="card__text">Reemplazo de cubiertas y aislaciones para proteger el edificio y su patrimonio.</p>
+    </article>
+
+    <article class="card card--obra">
+      <span class="card__icon" aria-hidden="true">
+        <!-- Baño / gota + inodoro simplificado -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 4h6a3 3 0 0 1 3 3v2H4V7a3 3 0 0 1 3-3Z"/>
+          <path d="M4 9h14a2 2 0 0 1 0 4h-1l-1 5a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2l-1-5H4a2 2 0 0 1 0-4Z"/>
+          <circle cx="19" cy="6" r="1.2"/>
+        </svg>
+      </span>
+      <h3 class="card__title">Baños Nuevos</h3>
+      <p class="card__text">Sanitarios completamente nuevos, accesibles y adaptados a normativa.</p>
+    </article>
+
+    <article class="card card--obra">
+      <span class="card__icon" aria-hidden="true">
+        <!-- Tubería / cloacas -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 8h8a3 3 0 0 1 3 3v8"/>
+          <path d="M3 6v4"/>
+          <path d="M12 19h4"/>
+          <circle cx="16" cy="19" r="2"/>
+        </svg>
+      </span>
+      <h3 class="card__title">Red de Cloacas</h3>
+      <p class="card__text">Ejecución de la red cloacal completa, fundamental para el funcionamiento.</p>
+    </article>
+
+    <article class="card card--obra">
+      <span class="card__icon" aria-hidden="true">
+        <!-- Rayo eléctrico -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/>
+        </svg>
+      </span>
+      <h3 class="card__title">Instalación Eléctrica</h3>
+      <p class="card__text">Nueva instalación eléctrica con criterios de seguridad y eficiencia.</p>
+      </article>
+
+       <article class="card card--obra">
+        <span class="card__icon" aria-hidden="true">
+        <!-- Pisos / baldosas -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="8" height="8" rx="1"/>
+          <rect x="13" y="3" width="8" height="8" rx="1"/>
+          <rect x="3" y="13" width="8" height="8" rx="1"/>
+           <rect x="13" y="13" width="8" height="8" rx="1"/>
+        </svg>
+      </span>
+      <h3 class="card__title">Restauración de Pisos</h3>
+      <p class="card__text">Recuperación de los pisos originales y colocación de nuevos solados.</p>
+      </article>
+    </div>
+  </section>
+
+      <header class="section__header section__header--inner">
+        <h3 class="section__title section__title--sm">Antes y Después de la Restauración</h3>
+        <p class="section__subtitle">Pasá el cursor (o tocá en el celular) para ver el avance de las obras.</p>
+      </header>
+
+      <div class="grid grid--compare">
+        <article class="compare" data-compare tabindex="0" aria-label="Comparación antes y después de la fachada del Teatro Marconi">
+          <img src="./images/frente.webp" alt="Fachada del Teatro Marconi antes de la restauración" class="compare__img compare__img--before" loading="lazy" />
+          <img src="./images/frente2.webp" alt="Fachada del Teatro Marconi después de la restauración" class="compare__img compare__img--after" loading="lazy" />
+          <span class="compare__tag compare__tag--before">Antes</span>
+          <span class="compare__tag compare__tag--after">Después</span>
+          <h4 class="compare__title">Teatro Marconi — Fachada</h4>
+        </article>
+
+        <article class="compare" data-compare tabindex="0" aria-label="Comparación antes y después del interior del Microcine">
+          <img src="./images/micro.webp" alt="Interior del Microcine antes de la restauración" class="compare__img compare__img--before" loading="lazy" />
+          <img src="./images/Microteatro.webp" alt="Interior del Microcine después de la restauración" class="compare__img compare__img--after" loading="lazy" />
+          <span class="compare__tag compare__tag--before">Antes</span>
+          <span class="compare__tag compare__tag--after">Después</span>
+          <h4 class="compare__title">Microcine — Interior</h4>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         NOVEDADES DE ITALIA
+         ============================================================ -->
+             <section class="section" id="novedades" aria-labelledby="novedades-title">
+      <header class="section__header">
+        <h2 class="section__title" id="novedades-title">Novedades de Italia</h2>
+        <p class="section__subtitle">Actualidad, trámites, cultura y sabores de la colectividad italiana.</p>
+      </header>
+         
+      <div class="grid grid--cards" id="novedadesLista">
+        <article class="card news-card" aria-labelledby="nov-actualidad">
+          <span class="tag">Actualidad</span>
+          <h3 class="card__title" id="nov-actualidad">Italia hoy</h3>
+          <p class="card__text">Un resumen de las noticias más relevantes de Italia, seleccionadas para la comunidad italo-argentina.</p>
+          <footer class="card__footer">
+            <a href="https://www.corriere.it/" aria-label="Leer más sobre Italia hoy">Leer más</a>
+          </footer>
+        </article>
+        <article class="card news-card" aria-labelledby="nov-consulado">
+          <span class="tag tag--consulado">Consulado</span>
+          <h3 class="card__title" id="nov-consulado">Novedades del Consulado</h3>
+          <p class="card__text">Turnos, ciudadanía, documentación y avisos oficiales para quienes gestionan trámites.</p>
+          <footer class="card__footer">
+            <a href="https://consrosario.esteri.it/es/" aria-label="Leer más sobre las novedades del Consulado">Leer más</a>
+          </footer>
+        </article>
+        <article class="card news-card" aria-labelledby="nov-cultura">
+          <span class="tag tag--cultura">Cultura</span>
+          <h3 class="card__title" id="nov-cultura">Cultura e italianidad</h3>
+          <p class="card__text">Festividades, música, cine y tradiciones que mantienen vivo nuestro vínculo con Italia.</p>
+          <footer class="card__footer">
+            <a href="https://www.raicultura.it" aria-label="Leer más sobre cultura e italianidad">Leer más</a>
+          </footer>
+        </article>
+        <article class="card news-card" aria-labelledby="nov-recetas">
+          <span class="tag tag--recetas">Recetas</span>
+          <h3 class="card__title" id="nov-recetas">Recetas Italianas</h3>
+          <p class="card__text">Tradiciones culinarias de la comida italiana que pasaron de generación en generación en nuestra comunidad.</p>
+          <footer class="card__footer">
+            <a href="https://www.giallozafferano.es/" aria-label="Ver las recetas de la comunidad">Ver recetas</a>
+          </footer>
+        </article>
+      </div>
+    </section>
+    <!-- ============================================================
+         MAPA INTERACTIVO DE ITALIA
+         ============================================================ -->
+    <section class="section section--dark" id="mapa-italia" aria-labelledby="mapa-title">
+      <header class="section__header">
+        <h2 class="section__title" id="mapa-title">De dónde vinieron</h2>
+        <p class="section__subtitle">Elegí una región para conocer la historia de las familias que llegaron a Gálvez.</p>
+      </header>
+
+      <div class="map-layout">
+        <figure id="italy-map">
+          <svg class="map__svg" viewBox="0 0 300 430" role="group" aria-labelledby="mapaDesc">
+            <title id="mapaDesc">Mapa de Italia dividido en sus 20 regiones. Cada región es un botón.</title>
+            <g id="regiones"></g>
+          </svg>
+          <figcaption class="map-caption">Mapa simplificado de las regiones de Italia. Usá Tab y Enter para recorrerlas.</figcaption>
+        </figure>
+
+        <article class="map-info" id="panelRegion" aria-live="polite" aria-atomic="true" aria-labelledby="regionTitulo">
+          <h3 class="map-info__title" id="regionTitulo">Seleccioná una región</h3>
+          <p class="map-info__text" id="regionTexto">Hacé clic en el mapa para leer sobre el origen de las familias inmigrantes y su llegada a Gálvez.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SUMATE / DONÁ
+         ============================================================ -->
+    <section class="section section--accent" id="colaborar" aria-labelledby="colaborar-title">
+      <header class="section__header">
+        <h2 class="section__title" id="colaborar-title">Sumate / Doná</h2>
+        <p class="section__subtitle">Tu participación es fundamental para que el Marconi vuelva a brillar.</p>
+      </header>
+
+      <form class="form" id="formColaborar" novalidate aria-label="Formulario de contacto y colaboración">
+        <div class="form__grid">
+
+          <label class="form__field">
+            <span class="form__label">Nombre completo *</span>
+            <input type="text" id="nombre" name="nombre" required minlength="3" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$" autocomplete="name" aria-describedby="error-nombre" />
+            <small class="form__error" id="error-nombre" aria-live="polite"></small>
+          </label>
+
+          <label class="form__field">
+            <span class="form__label">Teléfono / WhatsApp *</span>
+            <input type="tel" id="telefono" name="telefono" required placeholder="+54 3404 123456" aria-describedby="error-telefono" />
+            <small class="form__error" id="error-telefono" aria-live="polite"></small>
+          </label>
+
+          <label class="form__field">
+            <span class="form__label">Email *</span>
+            <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="error-email" />
+            <small class="form__error" id="error-email" aria-live="polite"></small>
+          </label>
+
+          <label class="form__field">
+            <span class="form__label">¿Cómo te gustaría colaborar? *</span>
+            <select id="tipo" name="tipo" required aria-describedby="error-tipo">
+              <option value="">Seleccioná una opción…</option>
+              <option value="socio">Socio</option>
+              <option value="donacion">Donación</option>
+              <option value="empresa">Empresa / Sponsor</option>
+            </select>
+            <small class="form__error" id="error-tipo" aria-live="polite"></small>
+          </label>
+
+          <label class="form__field form__field--full">
+            <span class="form__label">Mensaje adicional (opcional)</span>
+            <textarea id="mensaje" name="mensaje" maxlength="500" rows="4" placeholder="Contanos cómo querés sumarte…"></textarea>
+            <small class="form__hint"><span id="contadorMensaje">0</span> / 500 caracteres</small>
+          </label>
+
+          <label class="form__check form__field--full">
+            <input type="checkbox" id="terminos" name="terminos" required aria-describedby="error-terminos" />
+            <span>Acepto los términos y autorizo el uso de mis datos para ser contactado/a por la institución. *</span>
+          </label>
+          <small class="form__error form__error--check" id="error-terminos" aria-live="polite"></small>
+
+        </div>
+
+        <button type="submit" class="btn btn--primary form__submit">Enviar Solicitud / Contacto</button>
+
+        <p class="form__success" id="formSuccess" role="status" aria-live="polite" hidden>
+          ¡Gracias por sumarte! Recibimos tu solicitud y nos pondremos en contacto a la brevedad.
+        </p>
+      </form>
+    </section>
+
+    <!-- ============================================================
+         TU EXPERIENCIA EN EL MARCONI
+         ============================================================ -->
+    <section class="section" id="experiencias" aria-labelledby="experiencias-title">
+      <header class="section__header">
+        <h2 class="section__title" id="experiencias-title">Tu experiencia en el Marconi</h2>
+        <p class="section__subtitle">
+          ¿Visitaste nuestro estableciminento? Contanos cómo fue tu visita
+          y compartí una foto. También podés enviarnos tu experiencia por WhatsApp.
+        </p>
+      </header>
+
+      <form class="form" id="formExperiencia" novalidate aria-label="Formulario para compartir tu experiencia en el Marconi">
+        <div class="form__grid">
+
+          <label class="form__field">
+            <span class="form__label">Nombre y apellido *</span>
+            <input type="text" id="expNombre" name="nombre" required minlength="3" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$" autocomplete="name" aria-describedby="error-expNombre" />
+            <small class="form__error" id="error-expNombre" aria-live="polite"></small>
+          </label>
+
+          <label class="form__field">
+            <span class="form__label">Espacio que visitaste *</span>
+            <select id="expEspacio" name="espacio" required aria-describedby="error-expEspacio">
+              <option value="">Seleccioná una opción…</option>
+              <option value="La Galería">La Galería</option>
+              <option value="El Microcine">El Microcine</option>
+              <option value="el Teatro Marconi"> El Teatro Marconi</option>
+              <option value="un evento">El Establecimiento</option>
+            </select>
+            <small class="form__error" id="error-expEspacio" aria-live="polite"></small>
+          </label>
+
+          <label class="form__field form__field--full">
+            <span class="form__label">Tu comentario sobre la visita *</span>
+            <textarea id="expComentario" name="comentario" required minlength="10" maxlength="500" rows="5" placeholder="Contanos qué viste, qué sentiste o qué recordás del Marconi…" aria-describedby="error-expComentario"></textarea>
+            <small class="form__error" id="error-expComentario" aria-live="polite"></small>
+            <small class="form__hint"><span id="contadorExperiencia">0</span> / 500 caracteres</small>
+          </label>
+
+          <div class="form__field form__field--full">
+            <label class="form__label" for="expFoto">Tu foto* </label>
+            <input type="file" id="expFoto" name="foto" accept="image/*" aria-describedby="error-expFoto" />
+            <small class="form__error" id="error-expFoto" aria-live="polite"></small>
+
+            <figure class="form__preview" id="expVistaPrevia" hidden>
+              <img id="expVistaImg" class="form__preview-img" src="" alt="" />
+              <figcaption class="form__preview-caption">
+                <span id="expVistaNombre"></span>
+                <button type="button" class="btn btn--accent form__preview-remove" id="expQuitarFoto">Quitar foto</button>
+              </figcaption>
+            </figure>
+          </div>
+
+          <label class="form__check form__field--full">
+            <input type="checkbox" id="expTerminos" name="terminos" required aria-describedby="error-expTerminos" />
+            <span>Acepto los términos y autorizo a la institución a publicar mi nombre, mi comentario y mi foto. Si en la imagen aparecen otras personas, declaro contar con su consentimiento. *</span>
+          </label>
+          <small class="form__error form__error--check" id="error-expTerminos" aria-live="polite"></small>
+
+        </div>
+
+        <div class="experiencias__acciones">
+      
+          <a class="btn btn--whatsapp" id="expWhatsapp"
+             href="https://wa.me/543404408843"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Enviar mi experiencia por WhatsApp (se abre en una pestaña nueva)">
+            <svg class="icon icon--whatsapp" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-.9.9a4 4 0 0 1-2-2l.9-.9-1-2L9 8.5Z" fill="currentColor"/></svg>
+            Enviar por WhatsApp
+          </a>
+        </div>
+
+        <p class="experiencias__nota">
+          Por WhatsApp se abre un mensaje con tu nombre y comentario ya escritos.
+          <strong>Acordate de adjuntar tu foto</strong> dentro de la conversación.
+        </p>
+
+        <p class="form__success" id="expExito" role="status" aria-live="polite" tabindex="-1" hidden>
+          ¡Gracias por compartir tu experiencia! La revisaremos y la publicaremos a la brevedad.
+        </p>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" aria-label="Pie de página institucional">
+    <div class="site-footer__grid">
+      <section class="site-footer__col">
+        <h3 class="site-footer__title">Sociedad Italiana de Socorros Mutuos de Gálvez</h3>
+        <p class="site-footer__text">
+          "Italia Unida" — Recuperando el Cine-Teatro Marconi para toda la comunidad de Gálvez, Santa Fe.
+        </p>
+      </section>
+
+      <section class="site-footer__col">
+        <h3 class="site-footer__title">Contacto</h3>
+        <address class="site-footer__address">
+          Gálvez, Santa Fe, Argentina<br />
+          <a href="mailto:contacto@sociedaditalianagalvez.org.ar">contacto@sociedaditalianagalvez.org.ar</a><br />
+          <a href="tel:+543404408843">+54 3404 408843</a><br>
+          <a href="tel:+543404438624"> +54 3404 438624</a>
+        </address>
+      </section>
+
+      <nav class="site-footer__col" aria-labelledby="footer-redes">
+        <h3 class="site-footer__title" id="footer-redes">Seguinos</h3>
+        <ul class="site-footer__social">
+          <li><a href="https://www.instagram.com/sociedaditalianagalvez" target="_blank" rel="noopener noreferrer" aria-label="Instagram de la institución (se abre en una pestaña nueva)">Instagram</a></li>
+          <li><a href="https://www.facebook.com/sociedaditalianagalvez" target="_blank" rel="noopener noreferrer" aria-label="Facebook de la institución (se abre en una pestaña nueva)">Facebook</a></li>
+          <li><a href="https://wa.me/543404408843?text=Hola%2C%20quisiera%20consultar%20sobre%20la%20Sociedad%20Italiana%20de%20G%C3%A1lvez" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp institucional (se abre en una pestaña nueva)">WhatsApp</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p>© 2026 Sociedad Italiana de Socorros Mutuos de Gálvez. Todos los derechos reservados.</p>
+      <p class="site-footer__credit">Desarrollo a cargo de estudiantes de la Tecnicatura Superior en Análisis Funcional de Sistemas.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+/* ============================================================
+   RECORRIDO 360° — Teatro Marconi
+   Estilos propios del visor. Usa la paleta institucional del sitio.
+   Todo está prefijado con .r360 para no afectar nada más.
+   ============================================================ */
+.r360 {
+  --r360-verde: #008C45;
+  --r360-verde-oscuro: #006B34;
+  --r360-rojo: #CD212A;
+  --r360-rojo-oscuro: #a91a22;
+  --r360-crema: #f4efe9;
+
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 4rem 1rem 3rem;
+  text-align: center;
+  color: var(--r360-crema);
+  box-sizing: border-box;
+}
+.r360 *, .r360 *::before, .r360 *::after { box-sizing: border-box; }
+
+.r360__titulo {
+  margin: 0 0 .75rem;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+  line-height: 1.2;
+  color: var(--r360-crema);
+}
+.r360__subtitulo {
+  margin: 0 auto 1.75rem;
+  max-width: 640px;
+  color: #d1d5db;
+}
+
+/* Marco del visor */
+.r360__visor {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 2px solid var(--r360-verde);
+  background: #000;
+  box-shadow: 0 26px 50px rgba(0, 0, 0, .45);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.r360__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Etiqueta 360° */
+.r360__insignia {
+  position: absolute;
+  top: .9rem;
+  left: .9rem;
+  padding: .3rem .75rem;
+  border-radius: 999px;
+  background: var(--r360-rojo);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+/* Flechas */
+.r360__flecha {
+  position: absolute;
+  top: 50%;
+  width: 56px;
+  height: 56px;
+  margin-top: -28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, .85);
+  border-radius: 50%;
+  background: rgba(205, 33, 42, .88);
+  color: #fff;
+  cursor: grab;
+  transition: background .25s ease, transform .15s ease, opacity .25s ease;
+  touch-action: none;                 /* evita que el navegador robe el gesto al mantener */
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.r360__flecha--izq { left: .9rem; }
+.r360__flecha--der { right: .9rem; }
+.r360__flecha svg { width: 28px; height: 28px; pointer-events: none; }
+.r360__flecha:hover { background: var(--r360-rojo-oscuro); }
+.r360__flecha:active,
+.r360__flecha.is-activa {
+  cursor: grabbing;
+  background: var(--r360-verde);
+  transform: scale(.92);
+}
+.r360__flecha:focus-visible { outline: 3px solid #B08D57; outline-offset: 3px; }
+.r360__flecha:disabled { opacity: .45; cursor: wait; }
+
+/* Cargando */
+.r360__cargando {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: .6rem 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, .8), transparent);
+  font-size: .85rem;
+  color: #fff;
+  pointer-events: none;
+}
+.r360__cargando[hidden] { display: none; }
+.r360__barra {
+  display: block;
+  height: 4px;
+  margin-top: .35rem;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, .25);
+  overflow: hidden;
+}
+.r360__barra > span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--r360-verde);
+  transition: width .15s linear;
+}
+
+/* Indicador de giro (brújula lineal) */
+.r360__giro {
+  position: absolute;
+  left: 50%;
+  bottom: .9rem;
+  transform: translateX(-50%);
+  width: min(60%, 320px);
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, .3);
+  pointer-events: none;
+}
+.r360__giro > span {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--r360-verde);
+}
+.r360__cargando:not([hidden]) ~ .r360__giro { display: none; }
+
+.r360__ayuda {
+  margin: 1rem 0 0;
+  font-size: .9rem;
+  color: #9ca3af;
+}
+
+@media (max-width: 560px) {
+  .r360 { padding-top: 2.5rem; }
+  .r360__flecha { width: 46px; height: 46px; margin-top: -23px; }
+  .r360__flecha svg { width: 24px; height: 24px; }
+  .r360__visor { border-radius: 14px; }
+}
